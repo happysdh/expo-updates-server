@@ -27,6 +27,8 @@ export function signRSASHA256(data: string, privateKey: string) {
   return sign.sign(privateKey, 'base64');
 }
 
+process.env.PRIVATE_KEY_PATH = 'code-signing-keys/private-key.pem';
+
 export async function getPrivateKeyAsync() {
   const privateKeyPath = process.env.PRIVATE_KEY_PATH;
   if (!privateKeyPath) {
