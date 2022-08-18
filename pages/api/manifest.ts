@@ -75,7 +75,7 @@ export default async function manifestEndpoint(req: NextApiRequest, res: NextApi
       if (!privateKey) {
         res.statusCode = 400;
         res.json({
-          error: 'Code signing requested but no key supplied when starting server.' + process.env.PRIVATE_KEY_PATH,
+          error: 'Code signing requested but no key supplied when starting server.->>' + JSON.stringify(process.env),
         });
         return;
       }
